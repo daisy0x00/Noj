@@ -1,0 +1,31 @@
+
+
+int sumn, sumc;
+
+w[100]
+p[100]
+
+
+
+int ans = -1;
+// n 第 N 个物品 
+dfs(int n, int nowC, int nowP){
+	// 到了最后一步 sumn+1
+	if(n == sumn){
+		// 判断当前的价值和之前产生的价值，求出最大的价值
+		if(ans < nowP){
+			ans = nowP;
+		}
+	}
+	
+	// n 拿了
+	// 能不能拿
+	if(nowC + w[n] <= sumc){
+		
+		dfs(n+1, nowC + w[n], nowP + p[n]);
+	}
+	
+
+	// n 不拿
+	dfs(n+1,nowC, nowP);
+}

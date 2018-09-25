@@ -1,0 +1,26 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+ 
+double exp(){
+    //读入一个逆波兰表达式，并计算其值
+	int i;
+    char s[21];
+
+	scanf("%s",s);
+	
+    switch(s[0]){
+        case '+' : return exp() + exp();
+        case '-' : return exp() - exp();
+        case '*' : return exp() * exp();
+        case '/' : return exp() / exp();
+        default  : return atof(s);
+        break;
+    }
+}
+ 
+int main(){
+    printf("%lf", exp());
+    return 0;
+}
