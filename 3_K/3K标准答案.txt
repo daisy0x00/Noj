@@ -1,0 +1,57 @@
+#include<iostream>
+
+using namespace std;
+
+int dr[4] = {0, 1, 0, -1};
+int dc[4] = {-1, 0, 1, 0};
+int m, n;
+int erow, ecol;
+int crow, ccol;
+int a[20][20];
+
+void dfs(int t);
+
+int main()
+{
+	int i, j;
+
+	cin >> m >> n;
+	cin >> erow >> ecol;
+	cin >> crow >> ccol;
+	for(i = 0; i < m; i++)
+	{
+		for(j = 0; j < n; j++)
+		{
+			cin >> a[i][j];
+		}
+	}
+	dfs(erow * n + ecol);
+	if(a[crow][ccol] == 2)
+	{
+		cout << "Yes" << endl;
+	}
+	else
+	{
+		cout << "No" << endl;
+	}
+}
+
+void dfs(int t)
+{
+	int row, col;
+	int r, c;
+	int i;
+
+	row = t / n;
+	col = t % n;
+	a[row][col] = 2;
+	for(i = 0; i < 4; i++)
+	{
+		r = row + dr[i];
+		c = col + dc[i];
+		if(r >= 0 && r < m && c >= 0 && c < n && a[r][c] == 0)
+		{
+			dfs(r * n + c);
+		}
+	}
+}

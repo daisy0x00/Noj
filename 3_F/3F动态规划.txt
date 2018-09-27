@@ -1,0 +1,43 @@
+#include<iostream>
+
+using namespace std;
+
+int n, m;
+int l[101][101];
+
+void init(); 
+
+int main()
+{
+	int i, j;
+	
+	cin >> n >> m;
+	init();
+	for(i = 2; i <= n; i++)
+	{
+		for(j = 2; j <= m; j++)
+		{
+			l[i][j] = l[i][j - 1];
+			if(i >= j)
+			{
+				l[i][j] += l[i - j][j];
+			}
+		}
+	}
+	cout << l[n][m] << endl;
+}
+
+void init()
+{
+	int i, j;
+	
+	for(i = 0; i <= m; i++)
+	{
+		l[0][i] = 1;
+		l[1][i] = 1;
+	}
+	for(i = 0; i <= n; i++)
+	{
+		l[i][1] = 1;
+	}
+}

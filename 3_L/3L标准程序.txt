@@ -1,0 +1,82 @@
+#include<iostream>
+
+using namespace std;
+
+int a[101];
+int flag;
+
+void search(int m, int s, int b);
+
+int main()
+{
+	int flags, tmp, sml, big;
+	
+	cin >> sml >> big;
+	
+	while(sml != 0 || big != 0)
+	{
+		if(sml > big)
+		{
+			tmp = sml;
+			sml = big;
+			big = tmp;
+		}
+		flag = 0;
+		search(2, sml, 1);
+		flags = flag;
+		flag = 0;
+		search(2, sml, big);
+		if(flags == 1 && flag == 0)
+		{
+			cout << sml << endl;
+		}
+		else
+		{
+			cout << big << endl;
+		}
+		cin >> sml >> big;
+	}
+	return(0);
+}
+
+void search(int m, int s, int b)
+{
+	if(s == 1 && b == 1)
+	{
+		flag = 1;
+		return;
+	}
+	if(s > 1 && s < m || b > 1 && b < m)
+	{
+		return;
+	}
+	
+	if(m == 101)
+	{
+		return;
+	}
+	else
+	{
+		if(s % m == 0)
+		{
+			search(m + 1, s / m, b);
+			if(flag == 1)
+			{
+				return;
+			}
+		}
+		if(b % m == 0)
+		{
+			search(m + 1, s, b / m);
+			if(flag == 1)
+			{
+				return;
+			}
+		}
+		search(m + 1, s, b);
+		if(flag == 1)
+		{
+			return;
+		}
+	}
+}

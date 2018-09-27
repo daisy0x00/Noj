@@ -79,8 +79,6 @@ int main()
 	primeCircle(1);
 	printf("%d\n",sum);
 	// 用回溯法求素数环
-
-
 }
 
 void primeCircle(int t)

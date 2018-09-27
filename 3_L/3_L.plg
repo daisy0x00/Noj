@@ -6,21 +6,19 @@
 --------------------Configuration: 3_L - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\Daisy\AppData\Local\Temp\RSP5B62.tmp" with contents
+Creating temporary file "C:\Users\Daisy\AppData\Local\Temp\RSP835F.tmp" with contents
 [
-/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /Fp"Debug/3_L.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
-"D:\CWorkSpace\NWPUClass\3_L\3_L.c"
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:console /incremental:yes /pdb:"Debug/3_L.pdb" /debug /machine:I386 /out:"Debug/3_L.exe" /pdbtype:sept 
+.\Debug\3_L.obj
 ]
-Creating command line "cl.exe @C:\Users\Daisy\AppData\Local\Temp\RSP5B62.tmp" 
+Creating command line "link.exe @C:\Users\Daisy\AppData\Local\Temp\RSP835F.tmp"
 <h3>Output Window</h3>
-Compiling...
-3_L.c
-d:\cworkspace\nwpuclass\3_l\3_l.c(27) : warning C4013: 'swap' undefined; assuming extern returning int
+Linking...
 
 
 
 <h3>Results</h3>
-3_L.obj - 0 error(s), 0 warning(s)
+3_L.exe - 0 error(s), 0 warning(s)
 </pre>
 </body>
 </html>
