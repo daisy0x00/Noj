@@ -82,7 +82,7 @@ LINK32=link.exe
 # Name "3_A - Win32 Debug"
 # Begin Source File
 
-SOURCE=.\3_A.c
+SOURCE=.\3_A.cpp
 # End Source File
 # End Target
 # End Project
